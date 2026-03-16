@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database REST test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Data Manager</h2>
+
+    <div class="search-section">
+        <input type="text" id="search-input" placeholder='Enter search JSON (e.g. {"make":"Tesla"})'>
+        <button id="btn-search" class="btn-primary">Search</button>
+    </div>
+
+    <button id="btn-create">+ Create New Document</button>
+
+    <div id="status-message"></div>
+
+    <div id="results-container">
+        <p style="text-align: center; color: var(--secondary);">Search or create a document to see results.</p>
+    </div>
+</div>
+
+<div id="modal-overlay">
+    <div class="modal-content">
+        <h3 id="modal-title">Enter Document JSON</h3>
+        <textarea id="json-input" placeholder='{"make": "Tesla", "model": "3"}'></textarea>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button id="btn-modal-cancel">Cancel</button>
+            <button id="btn-modal-submit" class="btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
