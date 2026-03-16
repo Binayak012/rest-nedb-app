@@ -130,7 +130,7 @@ async function handleSearch() {
 
     try {
         const response = await fetch(
-            API_ENDPOINT + '?q=' + encodeURIComponent(query || '{}')
+            API_ENDPOINT + (query ? '?' + query : '')
         );
         const docs = await response.json();
 
@@ -168,7 +168,7 @@ async function handleCreate(rawJson){
         const doc = JSON.parse(rawJson);
         doc._id = result._id;
         showDocument(doc);
-        showSuccess("Created new document with data: " + rawJson);
+        showSuccess("Created document with ID: " + result._id);
     } catch (error) {
         showError(error.message || 'Network error during create.');
     }

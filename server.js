@@ -21,7 +21,7 @@ app.post('/data',(req,res)=>{       // POST new doc, return its _id
 
 
 app.get('/data',(req,res)=>{      // GET docs for given query
-    const query = req.query.q ? JSON.parse(req.query.q) : {};         //   find docs matching something
+    const query = req.query;         //   find docs matching something
     db.find(query)
     .then(docs=>res.send(docs))   //   respond with docs
     .catch(error=>res.send({error}));
